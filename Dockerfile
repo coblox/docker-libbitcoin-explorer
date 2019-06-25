@@ -8,7 +8,8 @@ RUN apt-get install -y g++-4.8 build-essential autoconf automake libtool pkg-con
 RUN wget https://raw.githubusercontent.com/libbitcoin/libbitcoin-explorer/version3/install.sh && \
     chmod +x install.sh
 
-RUN ./install.sh --prefix=/usr/local/bin --build-boost --build-zmq --disable-shared
+RUN ./install.sh --prefix=/usr/local/ --build-boost --build-zmq --disable-shared
+RUN rm -rf ./build-libbitcoin-explorer
 
 
 ENTRYPOINT ["/usr/local/bin/bx"]
